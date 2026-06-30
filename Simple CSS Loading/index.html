@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loading Animation</title>
+    <style>
+        body {
+            margin: 0;
+            height: 100vh;
+            background-color: #141414;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: Arial, sans-serif;
+        }
+
+        .loader {
+            perspective: 700px;
+            display: flex;
+        }
+
+        .loader span {
+            color: orange;
+            font-size: 16vw;
+            font-weight: bold;
+            animation: flip 2.6s infinite linear;
+            transform-origin: 0 70%;
+            transform-style: preserve-3d;
+            animation-delay: calc(var(--i) * 0.3s);
+        }
+
+        .loader span:nth-child(even) {
+            color: white;
+        }
+
+        @keyframes flip {
+
+            35%,
+            100% {
+                transform: rotateX(360deg);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="loader">
+        <span style="--i:0">L</span>
+        <span style="--i:1">O</span>
+        <span style="--i:2">A</span>
+        <span style="--i:3">D</span>
+        <span style="--i:4">I</span>
+        <span style="--i:5">N</span>
+        <span style="--i:6">G</span>
+    </div>
+</body>
+
+</html>
